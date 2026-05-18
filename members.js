@@ -152,8 +152,18 @@ window.TNB_MEMBERS = [
     role: "veterano",
     description: ""
   },
+      {
+    nick: "oVelocityrs",
+    role: "veterano",
+    description: ""
+  },
   
 
+    {
+    nick: "_ISlight_",
+    role: "recruta",
+    description: ""
+  },
     {
     nick: "ssobre",
     role: "membro",
@@ -164,22 +174,22 @@ window.TNB_MEMBERS = [
     role: "membro",
     description: ""
   },
-      {
+    {
     nick: "ghzv_",
     role: "membro",
     description: ""
   },
-        {
+    {
     nick: "caputtinno",
     role: "membro",
     description: ""
   },
-          {
+    {
     nick: "bentofv",
     role: "membro",
     description: ""
   },
-            {
+    {
     nick: "vvako",
     role: "membro",
     description: ""
@@ -198,78 +208,88 @@ window.TNB_MEMBERS = [
     role: "recruta",
     description: ""
   },
-      {
+    {
     nick: "Itzpaiva",
     role: "recruta",
     description: ""
   },
-        {
+    {
     nick: "FlayzzBB",
     role: "recruta",
     description: ""
   },
-          {
+    {
     nick: "legendaryclean",
     role: "recruta",
     description: ""
   },
-            {
+    {
     nick: "carnetemperrado",
     role: "recruta",
     description: ""
   },
-              {
+    {
     nick: "Akio_123hahagege",
     role: "recruta",
     description: ""
   },
-              {
+    {
     nick: "pedrotriste",
     role: "recruta",
     description: ""
   },
-                {
+    {
     nick: "Arth_turgita",
     role: "recruta",
     description: ""
   },
-                  {
+    {
     nick: "leonardoarqueiro",
     role: "recruta",
     description: ""
   },
-                    {
+    {
     nick: "AbyssifexXJ",
     role: "recruta",
     description: ""
   },
-                    {
+    {
     nick: "Renann067",
     role: "recruta",
     description: ""
   },
-                    {
+    {
     nick: "SpectralBR",
     role: "recruta",
     description: ""
   },
-                    {
+    {
     nick: "hqzyggez",
     role: "recruta",
     description: ""
   },
-                      {
+    {
     nick: "Wyzxzs",
     role: "recruta",
     description: ""
   },
-                        {
+    {
     nick: "Stripyduck01736",
     role: "recruta",
     description: ""
   },
-                        {
+    {
     nick: "Tomyyyy_",
+    role: "recruta",
+    description: ""
+  },
+    {
+    nick: "mickael7z",
+    role: "recruta",
+    description: ""
+  },
+    {
+    nick: "Vexx_xgh",
     role: "recruta",
     description: ""
   },
