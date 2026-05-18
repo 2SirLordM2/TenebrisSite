@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<!--
+  Site oficial do clã Tenebris (TNB).
+
+  Este projeto usa apenas HTML, CSS e JavaScript puro.
+  A ideia é ser fácil de editar: textos ficam aqui, visual fica em style.css
+  e membros ficam em members.js.
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO básico: ajuda o Google e redes sociais a entenderem o site. -->
+  <title>Tenebris (TNB) | Clã de Minecraft</title>
+  <meta name="description" content="Site oficial da Tenebris (TNB), clã de Minecraft com foco em PvP, domínio de servidores, estratégia e lealdade.">
+  <meta name="keywords" content="Tenebris, TNB, clã Minecraft, PvP Minecraft, Discord Minecraft, clan Minecraft">
+  <meta name="author" content="Tenebris TNB">
+  <meta property="og:title" content="Tenebris (TNB) | Clã de Minecraft">
+  <meta property="og:description" content="Clã de Minecraft dark, competitivo e dominante. Entre para a Tenebris.">
+  <meta property="og:image" content="imagens/tnblogo.png">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0a050d">
+
+  <!-- Favicon usando a própria logo do clã. -->
+  <link rel="icon" href="imagens/tnblogo.png">
+
+  <!-- CSS principal do site. -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Tela de carregamento. O JavaScript remove esta tela quando tudo carrega. -->
+  <div class="loader" id="loader" aria-label="Carregando site da Tenebris">
+    <img src="imagens/tnblogo.png" alt="Logo Tenebris" class="loader__logo">
+    <span class="loader__text">TENEBRIS</span>
+  </div>
+
+  <!-- Fundo animado com partículas desenhadas pelo script.js. -->
+  <canvas class="particle-canvas" id="particleCanvas" aria-hidden="true"></canvas>
+
+  <!-- Barra superior fixa. -->
+  <header class="site-header" id="topo">
+    <a class="brand" href="#topo" aria-label="Voltar para o início">
+      <img src="imagens/tnblogo.png" alt="Logo Tenebris" class="brand__logo">
+      <span class="brand__text">TNB</span>
+    </a>
+
+    <!-- Menu simples. Em celulares, vira menu recolhido. -->
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="main-nav" id="mainNav" aria-label="Menu principal">
+      <a href="#sobre">Sobre</a>
+      <a href="#membros">Membros</a>
+      <a href="#discord">Discord</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#recrutamento">Recrutamento</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Página inicial / Hero Section. -->
+    <section class="hero section" aria-labelledby="hero-title">
+      <div class="hero__content reveal">
+        <p class="eyebrow">Minecraft Clan | PvP | Domínio</p>
+        <img src="imagens/tnblogo.png" alt="Logo grande da Tenebris" class="hero__logo">
+        <h1 id="hero-title">TENEBRIS</h1>
+        <p class="hero__tagline">
+          Das sombras nasce a ordem. Da ordem nasce o domínio.
+        </p>
+        <div class="hero__actions">
+          <!-- Troque o link do Discord no arquivo script.js, na constante DISCORD_INVITE. -->
+          <a class="btn btn--primary" id="discordHeroButton" href="#" target="_blank" rel="noopener">
+            Entrar no Discord
+          </a>
+          <a class="btn btn--ghost" href="#recrutamento">
+            Recrutamento
+          </a>
+        </div>
+      </div>
+
+      <div class="hero__emblem reveal" aria-hidden="true">
+        <div class="emblem-card">
+          <span class="emblem-card__mark">TNB</span>
+          <span class="emblem-card__line"></span>
+          <span>Espada. Escudo. Vitória.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Estatísticas do clã. Os números podem ser editados em script.js. -->
+    <section class="stats section reveal" aria-label="Estatísticas do clã">
+      <article class="stat-card">
+        <span class="stat-card__number" data-stat="foundationYear">2023</span>
+        <span class="stat-card__label">Ano de fundação</span>
+      </article>
+      <article class="stat-card">
+        <span class="stat-card__number" data-stat="memberCount">0</span>
+        <span class="stat-card__label">Membros listados</span>
+      </article>
+      <article class="stat-card">
+        <span class="stat-card__number" data-stat="victories">128</span>
+        <span class="stat-card__label">Vitórias</span>
+      </article>
+      <article class="stat-card">
+        <span class="stat-card__number" data-stat="serversDominated">7</span>
+        <span class="stat-card__label">Servidores dominados</span>
+      </article>
+    </section>
+
+    <!-- Sobre o clã. Edite os parágrafos diretamente aqui. -->
+    <section class="about section" id="sobre" aria-labelledby="about-title">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Sobre o clã</p>
+        <h2 id="about-title">A Tenebris não aparece. Ela toma o mapa.</h2>
+      </div>
+
+      <div class="about__grid">
+        <article class="about-panel reveal">
+          <h3>Quem é a Tenebris</h3>
+          <p>
+            A Tenebris (TNB) nasceu no início de 2025, criada por SrLordM e Divisionbz após dominarem constantemente as arenas do BawMC. O que começou como apenas um nome para representar jogadores fortes rapidamente virou um clã focado em presença, estratégia e domínio dentro dos servidores.
+          </p>
+
+          <p>
+            A TNB reúne jogadores experientes da comunidade, conhecidos principalmente pelo PvP, organização e tempo de jogo juntos. O clã valoriza lealdade acima de qualquer habilidade individual. Aqui, confiança e presença têm mais peso do que fama.
+            </p>
+
+          <p>
+            Com uma entrada difícil e uma hierarquia organizada, a Tenebris mantém uma postura séria dentro dos servidores onde joga, sempre buscando crescer sem perder a própria identidade.
+          </p>
+        </article>
+
+        <article class="about-panel reveal">
+          <h3>História</h3>
+          <p>
+Antes da Tenebris existir, os fundadores utilizavam o nome “LT15”, criado como uma provocação dentro da comunidade, brincando com a fama de jogadores considerados fracos. Mesmo assim, o grupo já chamava atenção pela habilidade nas arenas.
+</p>
+
+<p>
+Foi no BawMC que a Tenebris realmente surgiu. O clã começou pequeno, mas rapidamente passou a dominar o ArenaPvP do servidor, criando rivalidade com outros grupos fortes da época, principalmente a N8L. Com o tempo, muitos jogadores acabaram migrando para a própria TNB.
+</p>
+
+<p>
+Além do BawMC, a Tenebris também deixou sua marca no SweetMC, consolidando reputação por enfrentar grupos maiores sem recuar. Mesmo ficando alguns meses inativa em determinado período, a identidade do clã nunca mudou: jogar junto, dominar e manter respeito dentro da equipe.
+</p>  
+        </article>
+
+        <article class="about-panel reveal">
+          <h3>Domínio em servidores</h3>
+          <p>
+A Tenebris atua principalmente em servidores como BawMC e NexMC, focando no ArenaPvP e no controle das áreas mais disputadas do servidor. O objetivo nunca foi apenas aparecer, mas transformar presença em domínio.
+</p>
+
+<p>
+O padrão costuma se repetir: a TNB entra sem chamar muita atenção, como jogadores comuns, mas em pouco tempo o nome do clã começa a ser reconhecido dentro do servidor. Organização, PvP agressivo e consistência fazem parte da identidade da equipe.
+</p>
+
+<p>
+Mesmo em menor número, a Tenebris ficou conhecida por enfrentar grupos maiores e vencer situações consideradas impossíveis. A assinatura do clã sempre foi simples: dominar arenas e manter pressão constante.
+</p>
+        </article>
+
+        <article class="about-panel reveal">
+          <h3>Gameplay e filosofia</h3>
+          <p>
+A Tenebris funciona com uma hierarquia organizada entre Dono, Sub Donos, Capitães, Líderes de Divisão, Oficiais, Veteranos, Membros e Recrutas. Cada cargo possui responsabilidade dentro do clã e é conquistado através de tempo, lealdade e participação.
+</p>
+
+<p>
+Mesmo sendo um clã competitivo, a TNB mantém regras rígidas contra racismo pesado, desrespeito excessivo e atitudes que prejudiquem o ambiente interno. Recrutas são tratados como parte da equipe desde o início, sem diferença no tratamento apenas por estarem começando.
+</p>
+
+<p>
+A filosofia da Tenebris é simples: disciplina, presença e confiança. O clã valoriza jogadores que evoluem junto com a equipe e rejeita comportamentos baseados em ego ou desrespeito. Mais do que um grupo aleatório, a TNB funciona como uma organização construída pela lealdade entre os membros.
+</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Sistema de cargos. As cores estão no CSS e também em members.js. -->
+    <section class="roles section reveal" aria-labelledby="roles-title">
+      <div class="section-heading">
+        <p class="eyebrow">Hierarquia</p>
+        <h2 id="roles-title">Cargos da Tenebris</h2>
+      </div>
+      <div class="role-list" id="roleList">
+        <!-- O JavaScript preenche esta área automaticamente. -->
+      </div>
+    </section>
+
+    <!-- Área de membros. Os cards são criados pelo JavaScript usando members.js. -->
+    <section class="members section" id="membros" aria-labelledby="members-title">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Roster</p>
+        <h2 id="members-title">Membros da Tenebris</h2>
+    <!--<p>
+          As cabeças são carregadas automaticamente pelo nickname do Minecraft.
+          Para editar a lista, abra o arquivo <strong>members.js</strong>.
+        </p> -->
+      </div>
+
+      <div class="member-groups" id="memberGroups">
+        <!-- O JavaScript cria os grupos: Liderança, Capitães, Elite, Membros e Recrutas. -->
+      </div>
+    </section>
+
+    <!-- Integração Discord. -->
+    <section class="discord section" id="discord" aria-labelledby="discord-title">
+      <div class="discord__content reveal">
+        <p class="eyebrow">Comunidade</p>
+        <h2 id="discord-title">Entre no Discord da TNB</h2>
+        <p>
+          Recrutamento, chamadas de guerra, avisos, estratégias e presença diária
+          acontecem no Discord oficial do clã.
+        </p>
+        <a class="btn btn--primary" id="discordSectionButton" href="#" target="_blank" rel="noopener">
+          Abrir convite
+        </a>
+      </div>
+
+      <aside class="discord-widget reveal" aria-label="Área do widget Discord">
+        <span class="discord-widget__label">Convite</span>
+        <strong id="discordInviteText">discord.gg/tenebris</strong>
+    <!--<p>
+          Espaço reservado para colocar o widget/embed do Discord depois.
+        </p> -->
+
+        <!--
+          Para colocar um widget real do Discord:
+          1. Ative o widget nas configurações do servidor Discord.
+          2. Copie o iframe gerado pelo Discord.
+          3. Substitua este bloco abaixo pelo iframe.
+        -->
+        <div class="discord-widget__placeholder">
+<iframe src="https://discord.com/widget?id=1425285002148450327&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Recrutamento. -->
+    <section class="recruitment section" id="recrutamento" aria-labelledby="recruitment-title">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Recrutamento</p>
+        <h2 id="recruitment-title">Prove que você não está aqui por acaso.</h2>
+        <p>Carregar o nome da Tenebris exige presença, lealdade e consistência.</p>
+      </div>
+
+      <div class="recruitment__grid">
+        <article class="requirement reveal">
+          <span>01</span>
+          <h3>Presença</h3>
+          <p>Quem não aparece, não faz parte.</p>
+          <p>Participação em calls, eventos e ações do clã é o mínimo esperado.</p>
+        </article>
+        <article class="requirement reveal">
+          <span>02</span>
+          <h3>Lealdade</h3>
+          <p>Hierarquia não é opcional.</p>
+          <p>Respeito interno, confiança e discrição são obrigatórios dentro da TNB.</p>
+        </article>
+        <article class="requirement reveal">
+          <span>03</span>
+          <h3>Combate</h3>
+          <p>Habilidade não é promessa, é obrigação.</p>
+          <p>PvP, farm e guerra fazem parte da rotina de quem veste o nome Tenebris.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Galeria. As imagens são controladas no script.js, dentro da lista galleryImages. -->
+    <section class="gallery section" id="galeria" aria-labelledby="gallery-title">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Galeria</p>
+        <h2 id="gallery-title">Momentos do clã</h2>
+        <!-- <p>Troque as imagens quando tiver prints de bases, vitórias e eventos.</p> -->
+      </div>
+      <div class="gallery-grid" id="galleryGrid">
+        <!-- O JavaScript monta a galeria automaticamente. -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé. -->
+  <footer class="site-footer">
+    <div>
+      <strong>TENEBRIS (TNB)</strong>
+      <p>Clã de Minecraft focado em domínio, guerra e lealdade.</p>
+    </div>
+
+    <nav class="footer-links" aria-label="Links do rodapé">
+      <a id="discordFooterButton" href="#" target="_blank" rel="noopener">Discord</a>
+      <a href="#membros">Membros</a>
+      <a href="#recrutamento">Recrutamento</a>
+    </nav>
+
+    <small>Copyright <span id="currentYear"></span> Tenebris. Todos os direitos reservados.</small>
+  </footer>
+
+  <!-- A ordem importa: members.js precisa carregar antes de script.js. -->
+  <script src="members.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
