@@ -34,17 +34,21 @@ const clanStats = {
     "imagens/vitoria-factions.png"
 */
 const galleryImages = [
-/*  {
-    src: "imagens/tnblogo.png",
-    title: "Base Tenebris"
-  },*/
-/*  {
-    src: "imagens/clanjuntoantigo.png",
-    title: "Vitória em guerra"
-  },*/
+  {
+    src: "imagens/Tenebrisantigo1.png",
+    title: "Primeira foto da Tenebris"
+  },
+  {
+    src: "imagens/Tenebrisantigo2.jpeg",
+    title: "Segunda foto da Tenebris"
+  },
+    {
+    src: "imagens/Tenebrisantigo3.png",
+    title: "Terceira foto da Tenebris"
+  },
   {
     src: "imagens/clanjuntoantigo.png",
-    title: "Domínio no servidor"
+    title: "Domínio do servidor no final de 2025"
   }
 ];
 
