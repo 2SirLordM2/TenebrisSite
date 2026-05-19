@@ -152,12 +152,16 @@ window.TNB_MEMBERS = [
     role: "veterano",
     description: ""
   },
-      {
+    {
     nick: "oVelocityrs",
     role: "veterano",
     description: ""
   },
-  
+    {
+    nick: "ghzv_",
+    role: "veterano",
+    description: ""
+  },
 
     {
     nick: "_ISlight_",
@@ -171,11 +175,6 @@ window.TNB_MEMBERS = [
   },
     {
     nick: "didizinhogod",
-    role: "membro",
-    description: ""
-  },
-    {
-    nick: "ghzv_",
     role: "membro",
     description: ""
   },
@@ -290,6 +289,26 @@ window.TNB_MEMBERS = [
   },
     {
     nick: "Vexx_xgh",
+    role: "recruta",
+    description: ""
+  },
+    {
+    nick: "FlayzzBB",
+    role: "recruta",
+    description: ""
+  },
+    {
+    nick: "M1dzz",
+    role: "recruta",
+    description: ""
+  },
+    {
+    nick: "916Killua",
+    role: "recruta",
+    description: ""
+  },
+    {
+    nick: "Luisdoxvds",
     role: "recruta",
     description: ""
   },
