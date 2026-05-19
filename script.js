@@ -47,11 +47,11 @@ const galleryImages = [
     title: "Terceira foto da Tenebris"
   },
       {
-    src: "imagens/Tnblogo.png",
+    src: "imagens/tnblogo.png",
     title: "Quarta foto da Tenebris"
   },
       {
-    src: "imagens/NeolatinosxTenebris.png",
+    src: "imagens/NeoLatinosxTenebris.png",
     title: "Quinta foto da Tenebris"
   },
   {
