@@ -46,6 +46,14 @@ const galleryImages = [
     src: "imagens/Tenebrisantigo3.png",
     title: "Terceira foto da Tenebris"
   },
+      {
+    src: "imagens/Tnblogo.png",
+    title: "Quarta foto da Tenebris"
+  },
+      {
+    src: "imagens/NeolatinosxTenebris.png",
+    title: "Quinta foto da Tenebris"
+  },
   {
     src: "imagens/clanjuntoantigo.png",
     title: "Domínio do servidor no final de 2025"
