@@ -316,7 +316,6 @@ window.TNB_MEMBERS = [
     nick: "Comentario",
     role: "recruta",
     description: ""
-  },
-
+  }
 
 ];
