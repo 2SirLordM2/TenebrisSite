@@ -316,6 +316,42 @@ window.TNB_MEMBERS = [
     nick: "Comentario",
     role: "recruta",
     description: ""
-  }
+  },
+    {
+    nick: "6wsd",
+    role: "recruta",
+    description: ""
+  },
+    {
+    nick: "V3nyxWz",
+    role: "recruta",
+    description: ""
+  },
+    {
+    nick: "KauaOPIS_BACK",
+    role: "recruta",
+    description: ""
+  },
+    {
+    nick: "AuakgPRO",
+    role: "recruta",
+    description: ""
+  },
+    {
+    nick: "Luisdoxvds",
+    role: "recruta",
+    description: ""
+  },
+  {
+    nick: "916Killua",
+    role: "recruta",
+    description: ""
+  },
+    {
+    nick: "M1dzz",
+    role: "recruta",
+    description: ""
+  },
+
 
 ];
