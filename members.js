@@ -15,7 +15,7 @@
   2. Use um destes valores:
      - "dono"
      - "subdono"
-     - "capitães"
+     - "capitaes"
      - "liderdivisao"
      - "oficial"
      - "veterano"
@@ -40,8 +40,8 @@ window.TNB_ROLES = [
     description: "Auxiliam diretamente na liderança e organização geral da TNB."
   },
   {
-    id: "capitães",
-    label: "Capitão",
+    id: "capitaes",
+    label: "Capitães",
     color: "#c2183a",
     description: "Comandam guerras, estratégias, calls e movimentação dos membros."
   },
@@ -84,25 +84,21 @@ window.TNB_MEMBERS = [
     role: "dono",
     description: "Fundador e Organizador da TNB."
   },
-
-  
   {
     nick: "Divisionbz",
     role: "subdono",
     description: "Líder dos treinamentos e testes de novos membros."
   },
-    {
+  {
     nick: "PyromaniacVV",
     role: "subdono",
     description: "Líder de tickets e formulários."
   },
-    {
+  {
     nick: "Ryven7",
     role: "subdono",
     description: "Líder do PvP Spawn."
   },
-
-
   {
     nick: "xCarlosBR",
     role: "liderdivisao",
@@ -113,15 +109,11 @@ window.TNB_MEMBERS = [
     role: "liderdivisao",
     description: "Líder da divisão 2."
   },
-
-
   {
     nick: "ZyroX_Isback",
     role: "oficial",
     description: ""
   },
-
-
   {
     nick: "LCDOLOVE_",
     role: "veterano",
@@ -132,213 +124,163 @@ window.TNB_MEMBERS = [
     role: "veterano",
     description: ""
   },
-    {
+  {
     nick: "zemdubs",
     role: "veterano",
     description: ""
   },
-    {
+  {
     nick: "CavIsMewing",
     role: "veterano",
     description: ""
   },
-    {
+  {
     nick: "RogerRivers",
     role: "veterano",
     description: ""
   },
-    {
+  {
     nick: "Kitter4k",
     role: "veterano",
     description: ""
   },
-    {
+  {
     nick: "oVelocityrs",
     role: "veterano",
     description: ""
   },
-    {
+  {
     nick: "ghzv_",
     role: "veterano",
     description: ""
   },
-
-    {
-    nick: "_ISlight_",
-    role: "recruta",
-    description: ""
-  },
-    {
+  {
     nick: "ssobre",
     role: "membro",
     description: ""
   },
-    {
+  {
     nick: "didizinhogod",
     role: "membro",
     description: ""
   },
-    {
+  {
     nick: "caputtinno",
     role: "membro",
     description: ""
   },
-    {
+  {
     nick: "bentofv",
     role: "membro",
     description: ""
   },
-    {
+  {
     nick: "vvako",
     role: "membro",
     description: ""
   },
-
-
-
+  {
+    nick: "_ISlight_",
+    role: "recruta",
+    description: ""
+  },
   {
     nick: "K91v1",
     role: "recruta",
     description: ""
   },
-
-    {
+  {
     nick: "H3gkz",
     role: "recruta",
     description: ""
   },
-    {
+  {
     nick: "Itzpaiva",
     role: "recruta",
     description: ""
   },
-    {
+  {
     nick: "FlayzzBB",
     role: "recruta",
     description: ""
   },
-    {
+  {
     nick: "legendaryclean",
     role: "recruta",
     description: ""
   },
-    {
+  {
     nick: "carnetemperrado",
     role: "recruta",
     description: ""
   },
-    {
+  {
     nick: "Akio_123hahagege",
     role: "recruta",
     description: ""
   },
-    {
+  {
     nick: "pedrotriste",
     role: "recruta",
     description: ""
   },
-    {
+  {
     nick: "Arth_turgita",
     role: "recruta",
     description: ""
   },
-    {
+  {
     nick: "leonardoarqueiro",
     role: "recruta",
     description: ""
   },
-    {
+  {
     nick: "AbyssifexXJ",
     role: "recruta",
     description: ""
   },
-    {
+  {
     nick: "Renann067",
     role: "recruta",
     description: ""
   },
-    {
+  {
     nick: "SpectralBR",
     role: "recruta",
     description: ""
   },
-    {
+  {
     nick: "hqzyggez",
     role: "recruta",
     description: ""
   },
-    {
+  {
     nick: "Wyzxzs",
     role: "recruta",
     description: ""
   },
-    {
+  {
     nick: "Stripyduck01736",
     role: "recruta",
     description: ""
   },
-    {
+  {
     nick: "Tomyyyy_",
     role: "recruta",
     description: ""
   },
-    {
+  {
     nick: "mickael7z",
     role: "recruta",
     description: ""
   },
-    {
+  {
     nick: "Vexx_xgh",
     role: "recruta",
     description: ""
   },
-    {
-    nick: "FlayzzBB",
-    role: "recruta",
-    description: ""
-  },
-    {
+  {
     nick: "M1dzz",
-    role: "recruta",
-    description: ""
-  },
-    {
-    nick: "916Killua",
-    role: "recruta",
-    description: ""
-  },
-    {
-    nick: "Luisdoxvds",
-    role: "recruta",
-    description: ""
-  },
-    {
-    nick: "Comentario",
-    role: "recruta",
-    description: ""
-  },
-    {
-    nick: "6wsd",
-    role: "recruta",
-    description: ""
-  },
-    {
-    nick: "V3nyxWz",
-    role: "recruta",
-    description: ""
-  },
-    {
-    nick: "KauaOPIS_BACK",
-    role: "recruta",
-    description: ""
-  },
-    {
-    nick: "AuakgPRO",
-    role: "recruta",
-    description: ""
-  },
-    {
-    nick: "Luisdoxvds",
     role: "recruta",
     description: ""
   },
@@ -347,11 +289,44 @@ window.TNB_MEMBERS = [
     role: "recruta",
     description: ""
   },
-    {
-    nick: "M1dzz",
+  {
+    nick: "Luisdoxvds",
     role: "recruta",
     description: ""
   },
-
-
+  {
+    nick: "Comentario",
+    role: "recruta",
+    description: ""
+  },
+  {
+    nick: "6wsd",
+    role: "recruta",
+    description: ""
+  },
+  {
+    nick: "V3nyxWz",
+    role: "recruta",
+    description: ""
+  },
+  {
+    nick: "KauaOPIS_BACK",
+    role: "recruta",
+    description: ""
+  },
+  {
+    nick: "AuakgPRO",
+    role: "recruta",
+    description: ""
+  },
+  {
+    nick: "menor_progresso7",
+    role: "recruta",
+    description: ""
+  },
+  {
+    nick: "EspadachimPreto",
+    role: "recruta",
+    description: ""
+  }
 ];

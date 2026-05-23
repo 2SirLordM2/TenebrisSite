@@ -61,17 +61,31 @@ const galleryImages = [
 ];
 
 /* Função curta para selecionar elementos HTML. */
+/* Filtro atual do roster. "todos" mostra todos os cargos. */
+let activeRoleFilter = "todos";
+
 const select = (selector) => document.querySelector(selector);
 
 /* Função para selecionar vários elementos HTML. */
 const selectAll = (selector) => document.querySelectorAll(selector);
+
+/* Evita que textos editados em members.js sejam interpretados como HTML. */
+function escapeHTML(value) {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
 
 /* Atualiza todos os botões e textos que usam o convite do Discord. */
 function setupDiscordLinks() {
   const buttons = [
     select("#discordHeroButton"),
     select("#discordSectionButton"),
-    select("#discordFooterButton")
+    select("#discordFooterButton"),
+    select("#discordRecruitmentButton")
   ];
 
   buttons.forEach((button) => {
@@ -114,8 +128,8 @@ function renderRoles() {
     .map((role) => {
       return `
         <article class="role-chip" style="--role-color: ${role.color}">
-          <strong>${role.label}</strong>
-          <span>${role.description}</span>
+          <strong>${escapeHTML(role.label)}</strong>
+          <span>${escapeHTML(role.description)}</span>
         </article>
       `;
     })
@@ -137,6 +151,46 @@ function getMinecraftHeadUrl(nickname) {
   return `https://minotar.net/avatar/${encodeURIComponent(nickname)}/100.png`;
 }
 
+/* Cria os botões para filtrar membros por cargo. */
+function renderMemberFilters() {
+  const filters = select("#memberFilters");
+  if (!filters || !Array.isArray(window.TNB_ROLES)) {
+    return;
+  }
+
+  const buttons = [
+    {
+      id: "todos",
+      label: "Todos",
+      color: "var(--gold)"
+    },
+    ...window.TNB_ROLES
+  ];
+
+  filters.innerHTML = buttons
+    .map((role) => {
+      const isActive = activeRoleFilter === role.id ? "is-active" : "";
+      const count = role.id === "todos"
+        ? window.TNB_MEMBERS.length
+        : window.TNB_MEMBERS.filter((member) => member.role === role.id).length;
+      return `
+        <button class="member-filter ${isActive}" type="button" data-role-filter="${role.id}" style="--role-color: ${role.color}">
+          <span>${escapeHTML(role.label)}</span>
+          <strong>${count}</strong>
+        </button>
+      `;
+    })
+    .join("");
+
+  selectAll("[data-role-filter]").forEach((button) => {
+    button.addEventListener("click", () => {
+      activeRoleFilter = button.dataset.roleFilter;
+      renderMemberFilters();
+      renderMembers();
+    });
+  });
+}
+
 /* Monta todos os cards de membros e separa por cargo. */
 function renderMembers() {
   const container = select("#memberGroups");
@@ -148,7 +202,7 @@ function renderMembers() {
     .map((role) => {
       const membersInRole = window.TNB_MEMBERS.filter((member) => member.role === role.id);
 
-      if (membersInRole.length === 0) {
+      if (membersInRole.length === 0 || (activeRoleFilter !== "todos" && activeRoleFilter !== role.id)) {
         return "";
       }
 
@@ -159,12 +213,12 @@ function renderMembers() {
               <img
                 class="member-card__head"
                 src="${getMinecraftHeadUrl(member.nick)}"
-                alt="Cabeça Minecraft de ${member.nick}"
+                alt="Cabeça Minecraft de ${escapeHTML(member.nick)}"
                 loading="lazy"
               >
-              <h3 class="member-card__nick">${member.nick}</h3>
-              <span class="member-card__role">${role.label}</span>
-              <p class="member-card__description">${member.description || "Membro da Tenebris."}</p>
+              <h3 class="member-card__nick">${escapeHTML(member.nick)}</h3>
+              <span class="member-card__role">${escapeHTML(role.label)}</span>
+              <p class="member-card__description">${escapeHTML(member.description || "Membro da Tenebris.")}</p>
             </article>
           `;
         })
@@ -172,7 +226,10 @@ function renderMembers() {
 
       return `
         <section class="member-group" style="--role-color: ${role.color}">
-          <h3 class="member-group__title">${role.label}</h3>
+          <h3 class="member-group__title">
+            <span>${escapeHTML(role.label)}</span>
+            <small>${membersInRole.length}</small>
+          </h3>
           <div class="member-grid">
             ${cardsHtml}
           </div>
@@ -182,6 +239,10 @@ function renderMembers() {
     .join("");
 
   container.innerHTML = groupsHtml;
+
+  container.querySelectorAll(".reveal").forEach((element) => {
+    requestAnimationFrame(() => element.classList.add("is-visible"));
+  });
 }
 
 /* Cria a galeria de imagens. */
@@ -195,8 +256,8 @@ function renderGallery() {
     .map((image) => {
       return `
         <article class="gallery-item reveal">
-          <img src="${image.src}" alt="${image.title}" loading="lazy">
-          <span>${image.title}</span>
+          <img src="${escapeHTML(image.src)}" alt="${escapeHTML(image.title)}" loading="lazy">
+          <span>${escapeHTML(image.title)}</span>
         </article>
       `;
     })
@@ -341,6 +402,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupDiscordLinks();
   setupStats();
   renderRoles();
+  renderMemberFilters();
   renderMembers();
   renderGallery();
   setupMobileMenu();
