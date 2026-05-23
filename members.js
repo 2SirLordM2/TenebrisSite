@@ -430,6 +430,11 @@ window.TNB_MEMBERS = [
     description: ""
   },
   {
+    nick: "LAGARXIXA_4M",
+    roles: ["recruta", "sa", "div2", "homem", "pvp"],
+    description: ""
+  },
+  {
     nick: "EspadachimPreto",
     roles: ["recruta", "sa", "div2", "homem", "pvp"],
     description: ""
