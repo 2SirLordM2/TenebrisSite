@@ -631,6 +631,27 @@ a {
   font-weight: 900;
 }
 
+.member-card__tags {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 10px;
+}
+
+.member-card__tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 0 9px;
+  color: var(--text);
+  border: 1px solid color-mix(in srgb, var(--tag-color), transparent 42%);
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--tag-color), transparent 82%);
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
 .member-card__description {
   position: relative;
   margin: 12px 0 0;

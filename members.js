@@ -11,8 +11,10 @@
   1. Apague o bloco inteiro do membro.
 
   Como trocar cargo:
-  1. Altere a propriedade role.
-  2. Use um destes valores:
+  1. Use roles para colocar um ou mais cargos no membro.
+  2. O site mostra o membro somente no cargo mais alto da hierarquia.
+  3. Cargos extras como "pvp", "builder" e "eventos" aparecem apenas como tags.
+  4. Use estes cargos de hierarquia:
      - "dono"
      - "subdono"
      - "capitaes"
@@ -21,6 +23,15 @@
      - "veterano"
      - "membro"
      - "recruta"
+
+  Exemplo:
+  {
+    nick: "Jogador",
+    roles: ["dono", "recruta", "pvp"],
+    description: "Descrição opcional."
+  }
+
+  No exemplo acima, o jogador aparece somente em Dono.
 
   A cabeça/skin aparece automaticamente pelo nick do Minecraft.
 */
@@ -77,256 +88,350 @@ window.TNB_ROLES = [
   }
 ];
 
+/* Cargos extras: aparecem no card, mas não criam categorias nem filtros. */
+window.TNB_EXTRA_ROLES = [
+  {
+    id: "pvp",
+    label: "PvP",
+    color: "#c2183a"
+  },
+  {
+    id: "lider_div_1",
+    label: "Líder da Divisão 1",
+    color: "#ff4d4d",
+  },
+  {
+    id: "lider_div_2",
+    label: "Líder da Divisão 2",
+    color: "#4da6ff",
+  },
+  {
+    id: "lider_div_3",
+    label: "Líder da Divisão 3",
+    color: "#9b59ff",
+  },
+  {
+    id: "builder",
+    label: "Builder",
+    color: "#00b894"
+  },
+  {
+    id: "eventos",
+    label: "Eventos",
+    color: "#d6b76a"
+  },
+  {
+    id: "homem",
+    label: "Homem",
+    color: "#3498db" // azul elegante
+  },
+  {
+    id: "mulher",
+    label: "Mulher",
+    color: "#ff4fa3" // rosa moderno
+  },
+  {
+    id: "recrutador_tnb",
+    label: "Recrutador TNB",
+    color: "#9b59b6" // roxo destaque
+  },
+  {
+    id: "div1",
+    label: "Divisão 1",
+    color: "#f1c40f" // dourado
+  },
+  {
+    id: "div2",
+    label: "Divisão 2",
+    color: "#e67e22" // laranja premium
+  },
+  {
+    id: "div3",
+    label: "Divisão 3",
+    color: "#95a5a6" // prata/cinza
+  },
+  {
+    id: "na",
+    label: "NA",
+    color: "#1abc9c" // verde água
+  },
+  {
+    id: "eu",
+    label: "EU",
+    color: "#3b82f6" // azul europeu
+  },
+  {
+    id: "sa",
+    label: "SA",
+    color: "#27ae60" // verde sul-america
+  },
+  {
+    id: "booster",
+    label: "Booster",
+    color: "#e74c3c" // vermelho forte
+  },
+  {
+    id: "influenciador_tnb",
+    label: "Influenciador TNB",
+    color: "#ff6b00" // laranja influencer
+  },
+  {
+    id: "box",
+    label: "Box",
+    color: "#6c5ce7" // roxo neon suave
+  }
+];
+
 /* Lista de membros do clã. Edite livremente. */
 window.TNB_MEMBERS = [
   {
     nick: "SrLordM",
-    role: "dono",
+    roles: ["dono", "lider_div_1", "influenciador_tnb", "sa", "div1", "sa", "recrutador_tnb", "homem", "pvp", "builder"],
     description: "Fundador e Organizador da TNB."
   },
   {
     nick: "Divisionbz",
-    role: "subdono",
+    roles: ["subdono", "lider_div_2", "sa", "div1", "sa", "recrutador_tnb", "homem", "pvp"],
     description: "Líder dos treinamentos e testes de novos membros."
   },
   {
     nick: "PyromaniacVV",
-    role: "subdono",
+    roles: ["subdono", "sa", "div1", "sa", "recrutador_tnb", "homem", "pvp"],
     description: "Líder de tickets e formulários."
   },
   {
     nick: "Ryven7",
-    role: "subdono",
+    roles: ["subdono", "lider_div_1", "div1", "sa", "recrutador_tnb", "homem", "pvp"],
     description: "Líder do PvP Spawn."
   },
   {
     nick: "xCarlosBR",
-    role: "liderdivisao",
+    roles: ["capitaes", "div1", "sa", "homem", "pvp"],
     description: "Líder da divisão 1."
   },
   {
     nick: "Arrasto",
-    role: "liderdivisao",
+    roles: ["liderdivisao", "lider_div_2", "div1", "sa", "homem", "pvp"],
     description: "Líder da divisão 2."
   },
   {
     nick: "ZyroX_Isback",
-    role: "oficial",
+    roles: ["oficial", "sa", "div2", "homem", "pvp"],
     description: ""
   },
   {
     nick: "LCDOLOVE_",
-    role: "veterano",
+    roles: ["veterano", "div1", "sa", "homem", "pvp"],
     description: ""
   },
   {
     nick: "Colph",
-    role: "veterano",
+    roles: ["veterano", "sa", "div3", "homem", "pvp"],
     description: ""
   },
   {
     nick: "zemdubs",
-    role: "veterano",
+    roles: ["veterano", "sa", "div2", "homem", "pvp"],
     description: ""
   },
   {
     nick: "CavIsMewing",
-    role: "veterano",
+    roles: ["veterano", "sa", "div3", "homem", "pvp"],
     description: ""
   },
   {
     nick: "RogerRivers",
-    role: "veterano",
+    roles: ["veterano", "sa", "div3", "homem", "pvp"],
     description: ""
   },
   {
     nick: "Kitter4k",
-    role: "veterano",
+    roles: ["veterano", "recrutador_tnb", "sa", "div2", "homem", "pvp"],
     description: ""
   },
   {
     nick: "oVelocityrs",
-    role: "veterano",
+    roles: ["veterano", "recrutador_tnb", "sa", "div1", "homem", "pvp"],
     description: ""
   },
   {
     nick: "ghzv_",
-    role: "veterano",
+    roles: ["veterano", "sa", "div1", "homem", "pvp"],
     description: ""
   },
   {
     nick: "ssobre",
-    role: "membro",
+    roles: ["veterano", "sa", "div3", "homem", "pvp"],
     description: ""
   },
   {
     nick: "didizinhogod",
-    role: "membro",
+    roles: ["membro", "sa", "div2", "homem", "pvp"],
     description: ""
   },
   {
     nick: "caputtinno",
-    role: "membro",
+    roles: ["membro", "sa", "div3", "homem", "pvp", "builder"],
     description: ""
   },
   {
     nick: "bentofv",
-    role: "membro",
+    roles: ["membro", "sa", "div2", "homem", "pvp"],
     description: ""
   },
   {
     nick: "vvako",
-    role: "membro",
+    roles: ["membro", "sa", "div3", "homem", "pvp"],
     description: ""
   },
   {
     nick: "_ISlight_",
-    role: "recruta",
+    roles: ["recruta", "sa", "div2", "homem", "pvp"],
     description: ""
   },
   {
     nick: "K91v1",
-    role: "recruta",
+    roles: ["recruta", "eu", "div2", "homem", "pvp"],
     description: ""
   },
   {
     nick: "H3gkz",
-    role: "recruta",
+    roles: ["recruta", "sa", "div2", "homem", "pvp"],
     description: ""
   },
   {
     nick: "Itzpaiva",
-    role: "recruta",
+    roles: ["recruta", "sa", "div2", "homem", "pvp"],
     description: ""
   },
   {
     nick: "FlayzzBB",
-    role: "recruta",
+    roles: ["recruta", "sa", "div1", "homem", "pvp"],
     description: ""
   },
   {
     nick: "legendaryclean",
-    role: "recruta",
+    roles: ["recruta", "sa", "div2", "homem", "pvp"],
     description: ""
   },
   {
     nick: "carnetemperrado",
-    role: "recruta",
+    roles: ["recruta", "sa", "div2", "homem", "pvp"],
     description: ""
   },
   {
     nick: "Akio_123hahagege",
-    role: "recruta",
+    roles: ["recruta", "sa", "div2", "homem", "pvp"],
     description: ""
   },
   {
     nick: "pedrotriste",
-    role: "recruta",
+    roles: ["recruta", "sa", "div3", "homem", "pvp"],
     description: ""
   },
   {
     nick: "Arth_turgita",
-    role: "recruta",
+    roles: ["recruta", "sa", "div2", "homem", "pvp"],
     description: ""
   },
   {
     nick: "leonardoarqueiro",
-    role: "recruta",
+    roles: ["recruta", "sa", "div2", "homem", "pvp"],
     description: ""
   },
   {
     nick: "AbyssifexXJ",
-    role: "recruta",
+    roles: ["recruta", "sa", "div3", "homem", "pvp"],
     description: ""
   },
   {
     nick: "Renann067",
-    role: "recruta",
+    roles: ["recruta", "sa", "div3", "homem", "pvp"],
     description: ""
   },
   {
     nick: "SpectralBR",
-    role: "recruta",
+    roles: ["recruta", "sa", "div2", "homem", "pvp"],
     description: ""
   },
   {
     nick: "hqzyggez",
-    role: "recruta",
+    roles: ["recruta", "sa", "div2", "homem", "pvp"],
     description: ""
   },
   {
     nick: "Wyzxzs",
-    role: "recruta",
+    roles: ["recruta", "sa", "div2", "homem", "pvp"],
     description: ""
   },
   {
     nick: "Stripyduck01736",
-    role: "recruta",
+    roles: ["recruta", "sa", "div2", "homem", "pvp"],
     description: ""
   },
   {
     nick: "Tomyyyy_",
-    role: "recruta",
+    roles: ["recruta", "sa", "div2", "homem", "pvp"],
     description: ""
   },
   {
     nick: "mickael7z",
-    role: "recruta",
+    roles: ["recruta", "sa", "div2", "homem", "pvp"],
     description: ""
   },
   {
     nick: "Vexx_xgh",
-    role: "recruta",
+    roles: ["recruta", "sa", "div2", "homem", "pvp"],
     description: ""
   },
   {
     nick: "M1dzz",
-    role: "recruta",
+    roles: ["recruta", "sa", "div3", "homem", "pvp"],
     description: ""
   },
   {
     nick: "916Killua",
-    role: "recruta",
+    roles: ["recruta", "sa", "div2", "homem", "pvp"],
     description: ""
   },
   {
     nick: "Luisdoxvds",
-    role: "recruta",
+    roles: ["recruta", "sa", "div2", "homem", "pvp"],
     description: ""
   },
   {
     nick: "Comentario",
-    role: "recruta",
+    roles: ["recruta", "sa", "div3", "homem", "pvp"],
     description: ""
   },
   {
     nick: "6wsd",
-    role: "recruta",
+    roles: ["recruta", "sa", "div2", "homem", "pvp"],
     description: ""
   },
   {
     nick: "V3nyxWz",
-    role: "recruta",
+    roles: ["recruta", "sa", "div2", "homem", "pvp"],
     description: ""
   },
   {
     nick: "KauaOPIS_BACK",
-    role: "recruta",
+    roles: ["recruta", "sa", "div2", "homem", "pvp"],
     description: ""
   },
   {
     nick: "AuakgPRO",
-    role: "recruta",
+    roles: ["recruta", "sa", "div2", "homem", "pvp"],
     description: ""
   },
   {
     nick: "menor_progresso7",
-    role: "recruta",
+    roles: ["recruta", "sa", "div2", "homem", "pvp"],
     description: ""
   },
   {
     nick: "EspadachimPreto",
-    role: "recruta",
+    roles: ["recruta", "sa", "div2", "homem", "pvp"],
     description: ""
   }
 ];

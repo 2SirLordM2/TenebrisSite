@@ -102,7 +102,7 @@ function setupDiscordLinks() {
 
 /* Preenche as estatísticas do site. */
 function setupStats() {
-  const memberCount = Array.isArray(window.TNB_MEMBERS) ? window.TNB_MEMBERS.length : 0;
+  const memberCount = getUniqueMembers().length;
 
   const stats = {
     ...clanStats,
@@ -141,6 +141,64 @@ function getRoleConfig(roleId) {
   return window.TNB_ROLES.find((role) => role.id === roleId) || window.TNB_ROLES[window.TNB_ROLES.length - 1];
 }
 
+/* Encontra as informações visuais de um cargo secundário. */
+function getExtraRoleConfig(roleId) {
+  const extraRoles = Array.isArray(window.TNB_EXTRA_ROLES) ? window.TNB_EXTRA_ROLES : [];
+  return extraRoles.find((role) => role.id === roleId);
+}
+
+/* Transforma role antigo + roles novo em uma lista limpa. */
+function getMemberRoles(member) {
+  const roles = Array.isArray(member.roles) ? member.roles : [];
+  const legacyRole = member.role ? [member.role] : [];
+  return [...new Set([...roles, ...legacyRole].filter(Boolean))];
+}
+
+/* Descobre o cargo principal pela ordem da hierarquia em TNB_ROLES. */
+function getPrimaryRole(member) {
+  const memberRoles = getMemberRoles(member);
+  return window.TNB_ROLES.find((role) => memberRoles.includes(role.id)) || window.TNB_ROLES[window.TNB_ROLES.length - 1];
+}
+
+/* Cargos que não fazem parte da hierarquia viram apenas tags decorativas. */
+function getSecondaryRoles(member) {
+  const hierarchyIds = window.TNB_ROLES.map((role) => role.id);
+  return getMemberRoles(member)
+    .filter((roleId) => !hierarchyIds.includes(roleId))
+    .map((roleId) => getExtraRoleConfig(roleId) || {
+      id: roleId,
+      label: roleId,
+      color: "var(--gold)"
+    });
+}
+
+/* Junta entradas repetidas do mesmo nick e evita cards duplicados. */
+function getUniqueMembers() {
+  if (!Array.isArray(window.TNB_MEMBERS)) {
+    return [];
+  }
+
+  const membersByNick = new Map();
+
+  window.TNB_MEMBERS.forEach((member) => {
+    const key = member.nick.toLowerCase();
+    const existing = membersByNick.get(key);
+
+    if (!existing) {
+      membersByNick.set(key, {
+        ...member,
+        roles: getMemberRoles(member)
+      });
+      return;
+    }
+
+    existing.roles = [...new Set([...getMemberRoles(existing), ...getMemberRoles(member)])];
+    existing.description = existing.description || member.description || "";
+  });
+
+  return [...membersByNick.values()];
+}
+
 /* Cria a URL da cabeça do Minecraft automaticamente pelo nick. */
 function getMinecraftHeadUrl(nickname) {
   /*
@@ -158,6 +216,8 @@ function renderMemberFilters() {
     return;
   }
 
+  const uniqueMembers = getUniqueMembers();
+
   const buttons = [
     {
       id: "todos",
@@ -171,8 +231,8 @@ function renderMemberFilters() {
     .map((role) => {
       const isActive = activeRoleFilter === role.id ? "is-active" : "";
       const count = role.id === "todos"
-        ? window.TNB_MEMBERS.length
-        : window.TNB_MEMBERS.filter((member) => member.role === role.id).length;
+        ? uniqueMembers.length
+        : uniqueMembers.filter((member) => getPrimaryRole(member).id === role.id).length;
       return `
         <button class="member-filter ${isActive}" type="button" data-role-filter="${role.id}" style="--role-color: ${role.color}">
           <span>${escapeHTML(role.label)}</span>
@@ -198,9 +258,11 @@ function renderMembers() {
     return;
   }
 
+  const uniqueMembers = getUniqueMembers();
+
   const groupsHtml = window.TNB_ROLES
     .map((role) => {
-      const membersInRole = window.TNB_MEMBERS.filter((member) => member.role === role.id);
+      const membersInRole = uniqueMembers.filter((member) => getPrimaryRole(member).id === role.id);
 
       if (membersInRole.length === 0 || (activeRoleFilter !== "todos" && activeRoleFilter !== role.id)) {
         return "";
@@ -208,6 +270,17 @@ function renderMembers() {
 
       const cardsHtml = membersInRole
         .map((member) => {
+          const secondaryRoles = getSecondaryRoles(member);
+          const secondaryBadges = secondaryRoles
+            .map((secondaryRole) => {
+              return `
+                <span class="member-card__tag" style="--tag-color: ${secondaryRole.color}">
+                  ${escapeHTML(secondaryRole.label)}
+                </span>
+              `;
+            })
+            .join("");
+
           return `
             <article class="member-card reveal" style="--role-color: ${role.color}">
               <img
@@ -218,6 +291,7 @@ function renderMembers() {
               >
               <h3 class="member-card__nick">${escapeHTML(member.nick)}</h3>
               <span class="member-card__role">${escapeHTML(role.label)}</span>
+              ${secondaryBadges ? `<div class="member-card__tags">${secondaryBadges}</div>` : ""}
               <p class="member-card__description">${escapeHTML(member.description || "Membro da Tenebris.")}</p>
             </article>
           `;
