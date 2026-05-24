@@ -96,6 +96,11 @@ window.TNB_EXTRA_ROLES = [
     color: "#c2183a"
   },
   {
+    id: "pvp",
+    label: "PvP",
+    color: "#e00b35"
+  },
+  {
     id: "lider_div_1",
     label: "Líder da Divisão 1",
     color: "#ff4d4d",
@@ -206,7 +211,7 @@ window.TNB_MEMBERS = [
   },
   {
     nick: "xCarlosBR",
-    roles: ["capitaes", "div1", "sa", "homem", "semi"],
+    roles: ["capitaes", "div1", "sa", "homem", "semi", "box"],
     description: "Líder da divisão 1."
   },
   {
@@ -251,7 +256,7 @@ window.TNB_MEMBERS = [
   },
   {
     nick: "oVelocityrs",
-    roles: ["veterano", "recrutador_tnb", "sa", "div1", "homem", "semi"],
+    roles: ["veterano", "recrutador_tnb", "sa", "div1", "homem", "semi", "box"],
     description: ""
   },
   {
@@ -261,7 +266,7 @@ window.TNB_MEMBERS = [
   },
   {
     nick: "ssobre",
-    roles: ["veterano", "sa", "div3", "homem", "semi"],
+    roles: ["veterano", "sa", "div3", "homem", "builder"],
     description: ""
   },
   {
@@ -286,17 +291,17 @@ window.TNB_MEMBERS = [
   },
   {
     nick: "_ISlight_",
-    roles: ["recruta", "sa", "div2", "homem", "semi"],
+    roles: ["recruta", "sa", "div1", "homem", "semi"],
     description: ""
   },
   {
     nick: "K91v1",
-    roles: ["recruta", "eu", "div2", "homem", "semi"],
+    roles: ["recruta", "eu", "div1", "homem", "semi"],
     description: ""
   },
   {
     nick: "H3gkz",
-    roles: ["recruta", "sa", "div2", "homem", "semi"],
+    roles: ["recruta", "sa", "div1", "homem", "semi"],
     description: ""
   },
   {
@@ -346,7 +351,7 @@ window.TNB_MEMBERS = [
   },
   {
     nick: "SpectralBR",
-    roles: ["recruta", "sa", "div2", "homem", "semi"],
+    roles: ["recruta", "sa", "div2", "homem", "semi", "box"],
     description: ""
   },
   {
@@ -396,7 +401,7 @@ window.TNB_MEMBERS = [
   },
   {
     nick: "Comentario",
-    roles: ["recruta", "sa", "div3", "homem", "semi"],
+    roles: ["recruta", "sa", "eu", "div3", "homem", "semi", "builder"],
     description: ""
   },
   {
@@ -439,4 +444,19 @@ window.TNB_MEMBERS = [
     roles: ["recruta", "sa", "div2", "homem", "semi"],
     description: ""
   },
+  {
+    nick: "SW1GHT7",
+    roles: ["recruta", "sa", "div2", "homem", "semi"],
+    description: ""
+  },
+  {
+    nick: "shadowcraft00",
+    roles: ["recruta", "sa", "div2", "homem", "semi"],
+    description: ""
+  },
+  {
+    nick: "Arth_turgita ",
+    roles: ["recruta", "sa", "div2", "homem", "semi"],
+    description: ""
+  }
 ];
