@@ -35,7 +35,7 @@ window.TNB_EVENTS = [
     requirements: "Ser ativo no Minecraft e no Discord, e estar disposto a participar das atividades do clã."
   }
 ];
-/*
+
 window.TNB_PARTNERS = [
   {
     name: "Rede Ancestral",
@@ -45,7 +45,7 @@ window.TNB_PARTNERS = [
     description: "Servidor focado na modalidade de RankUp com diversas funcionalidades novas."
   }
 ];
-*/
+/*
 window.TNB_ALLIES = [
   {
     name: "Nenhum",
@@ -54,7 +54,7 @@ window.TNB_ALLIES = [
     description: "Aliança formada em 03/06/2026."
   }
 ];
-
+*/
 window.TNB_GIVEAWAYS = [
   {
     title: "Sorteio interno TNB",
