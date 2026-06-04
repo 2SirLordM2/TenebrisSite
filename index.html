@@ -59,6 +59,7 @@
       <a href="#discord">Discord</a>
       <a href="#galeria">Galeria</a>
       <a href="#recrutamento">Recrutamento</a>
+      <a href="#portal">Portal</a>
     </nav>
   </header>
 
@@ -394,6 +395,37 @@ A filosofia da Tenebris é simples: disciplina, presença e confiança. O clã v
         <!-- O JavaScript monta a galeria automaticamente. -->
       </div>
     </section>
+    <section class="portal section" id="portal" aria-labelledby="portal-title">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Portal TNB</p>
+        <h2 id="portal-title">Eventos, aliados e sorteios</h2>
+      </div>
+
+      <div class="portal-tabs reveal" role="tablist" aria-label="Áreas do portal">
+        <button class="portal-tab is-active" type="button" data-portal-tab="events">Eventos</button>
+        <button class="portal-tab" type="button" data-portal-tab="partners">Parceiros</button>
+        <button class="portal-tab" type="button" data-portal-tab="allies">Aliados</button>
+        <button class="portal-tab" type="button" data-portal-tab="giveaways">Sorteios</button>
+      </div>
+
+      <div class="portal-panel is-active" data-portal-panel="events">
+        <div class="portal-grid" id="eventsGrid"></div>
+      </div>
+
+      <div class="portal-panel" data-portal-panel="partners">
+        <div class="portal-grid" id="partnersGrid"></div>
+      </div>
+
+      <div class="portal-panel" data-portal-panel="allies">
+        <div class="portal-grid" id="alliesGrid"></div>
+      </div>
+
+      <div class="portal-panel" data-portal-panel="giveaways">
+        <div class="portal-grid" id="giveawaysGrid"></div>
+      </div>
+    </section>
+
+
   </main>
 
   <!-- Rodapé. -->
@@ -409,6 +441,7 @@ A filosofia da Tenebris é simples: disciplina, presença e confiança. O clã v
       <a href="#regras">Regras</a>
       <a href="#membros">Membros</a>
       <a href="#recrutamento">Recrutamento</a>
+      <a href="#portal">Portal</a>
     </nav>
 
     <small>Copyright <span id="currentYear"></span> Tenebris. Todos os direitos reservados.</small>
@@ -416,6 +449,7 @@ A filosofia da Tenebris é simples: disciplina, presença e confiança. O clã v
 
   <!-- A ordem importa: members.js precisa carregar antes de script.js. -->
   <script src="members.js"></script>
+  <script src="portal.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

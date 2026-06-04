@@ -184,289 +184,77 @@ window.TNB_EXTRA_ROLES = [
     id: "box",
     label: "Box",
     color: "#6c5ce7" // roxo neon suave
+  },
+  {
+    id: "bee_swarm",
+    label: "Bee Swarm",
+    color: "#f9d423"
   }
 ];
 
-/* Lista de membros do clã. Edite livremente. */
+/*
+  Lista de membros do cl?.
+  ------------------------------------------------------------
+  Use membro("Nick", ["cargo", "tag"], "descri??o opcional").
+
+  Regras importantes:
+  - Coloque pelo menos um cargo de hierarquia em cada membro.
+  - Cargos de hierarquia: dono, subdono, capitaes, liderdivisao, oficial, veterano, membro, recruta.
+  - Tags extras: pvp, builder, semi, homem, mulher, recrutador_tnb, bee_swarm, div1, sa etc.
+  - Tags extras aparecem no card, mas n?o criam filtros nem categorias.
+  - Se algu?m tiver v?rios cargos de hierarquia, aparece somente no mais alto.
+*/
+const membro = (nick, roles, description = "") => ({
+  nick,
+  roles,
+  description
+});
+
 window.TNB_MEMBERS = [
-  {
-    nick: "SrLordM",
-    roles: ["dono", "lider_div_1", "influenciador_tnb", "sa", "div1", "box", "recrutador_tnb", "homem", "semi", "builder", "pvp"],
-    description: "Fundador e Organizador da TNB."
-  },
-  {
-    nick: "Divisionbz",
-    roles: ["subdono", "lider_div_2", "sa", "div1", "sa", "recrutador_tnb", "homem", "semi", "pvp"],
-    description: "Líder dos treinamentos e testes de novos membros."
-  },
-  {
-    nick: "PyromaniacVV",
-    roles: ["subdono", "sa", "div1", "sa", "recrutador_tnb", "homem", "semi", "pvp"],
-    description: "Líder de tickets e formulários."
-  },
-  {
-    nick: "Ryven7",
-    roles: ["subdono", "lider_div_1", "div1", "sa", "recrutador_tnb", "homem", "semi", "pvp"],
-    description: "Líder do semi Spawn."
-  },
-  {
-    nick: "xCarlosBR",
-    roles: ["capitaes", "div1", "sa", "homem", "semi", "box", "pvp"],
-    description: "Líder da divisão 1."
-  },
-  {
-    nick: "Arrasto",
-    roles: ["liderdivisao", "lider_div_2", "div1", "sa", "homem", "semi", "pvp"],
-    description: "Líder da divisão 2."
-  },
-  {
-    nick: "ZyroX_Isback",
-    roles: ["oficial", "sa", "div2", "homem", "semi", "pvp"],
-    description: ""
-  },
-  {
-    nick: "LCDOLOVE_",
-    roles: ["veterano", "div1", "sa", "homem", "semi", "pvp"],
-    description: ""
-  },
-  {
-    nick: "Colph",
-    roles: ["veterano", "sa", "div3", "homem", "semi", "pvp"],
-    description: ""
-  },
-  {
-    nick: "zemdubs",
-    roles: ["veterano", "sa", "div2", "homem", "semi", "pvp"],
-    description: ""
-  },
-  {
-    nick: "CavIsMewing",
-    roles: ["veterano", "sa", "div3", "homem", "semi", "pvp"],
-    description: ""
-  },
-  {
-    nick: "RogerRivers",
-    roles: ["veterano", "sa", "div3", "homem", "semi", "pvp"],
-    description: ""
-  },
-  {
-    nick: "Kitter4k",
-    roles: ["veterano", "recrutador_tnb", "sa", "div2", "homem", "semi", "pvp"],
-    description: ""
-  },
-  {
-    nick: "oVelocityrs",
-    roles: ["veterano", "recrutador_tnb", "sa", "div1", "homem", "semi", "box", "pvp"],
-    description: ""
-  },
-  {
-    nick: "ghzv_",
-    roles: ["veterano", "sa", "div1", "homem", "semi", "pvp"],
-    description: ""
-  },
-  {
-    nick: "ssobre",
-    roles: ["veterano", "sa", "div3", "homem", "builder", "pvp"],
-    description: ""
-  },
-  {
-    nick: "didizinhogod",
-    roles: ["membro", "sa", "div2", "homem", "semi", "pvp"],
-    description: ""
-  },
-  {
-    nick: "caputtinno",
-    roles: ["membro", "sa", "div3", "homem", "semi", "builder", "pvp"],
-    description: ""
-  },
-  {
-    nick: "bentofv",
-    roles: ["membro", "sa", "div2", "homem", "semi", "pvp"],
-    description: ""
-  },
-  {
-    nick: "vvako",
-    roles: ["membro", "sa", "div3", "homem", "semi", "pvp"],
-    description: ""
-  },
-  {
-    nick: "_ISlight_",
-    roles: ["recruta", "sa", "div1", "homem", "semi", "pvp"],
-    description: ""
-  },
-  {
-    nick: "K91v1",
-    roles: ["recruta", "eu", "div1", "homem", "semi", "pvp"],
-    description: ""
-  },
-  {
-    nick: "H3gkz",
-    roles: ["recruta", "sa", "div1", "homem", "semi", "pvp"],
-    description: ""
-  },
-  {
-    nick: "Itzpaiva",
-    roles: ["recruta", "eu", "div2", "homem", "semi", "pvp"],
-    description: ""
-  },
-  {
-    nick: "FlayzzBB",
-    roles: ["recruta", "sa", "div1", "homem", "semi", "pvp"],
-    description: ""
-  },
-  {
-    nick: "carnetemperrado",
-    roles: ["recruta", "sa", "div2", "homem", "semi", "pvp"],
-    description: ""
-  },
-  {
-    nick: "Akio_123hahagege",
-    roles: ["recruta", "sa", "div2", "homem", "semi", "pvp"],
-    description: ""
-  },
-  {
-    nick: "pedrotriste",
-    roles: ["recruta", "sa", "div3", "homem", "semi", "pvp"],
-    description: ""
-  },
-  {
-    nick: "Arth_turgita",
-    roles: ["recruta", "sa", "div2", "homem", "semi", "pvp"],
-    description: ""
-  },
-  {
-    nick: "leonardoarqueiro",
-    roles: ["recruta", "sa", "div2", "homem", "semi", "pvp"],
-    description: ""
-  },
-  {
-    nick: "AbyssifexXJ",
-    roles: ["recruta", "sa", "div3", "homem", "semi", "pvp"],
-    description: ""
-  },
-  {
-    nick: "Renann067",
-    roles: ["recruta", "sa", "div3", "homem", "semi", "pvp"],
-    description: ""
-  },
-  {
-    nick: "SpectralBR",
-    roles: ["recruta", "sa", "div2", "homem", "semi", "box", "pvp"],
-    description: ""
-  },
-  {
-    nick: "hqzyggez",
-    roles: ["recruta", "sa", "div2", "homem", "semi", "pvp"],
-    description: ""
-  },
-  {
-    nick: "Wyzxzs",
-    roles: ["recruta", "sa", "div2", "homem", "semi", "pvp"],
-    description: ""
-  },
-  {
-    nick: "Stripyduck01736",
-    roles: ["recruta", "sa", "div2", "homem", "semi", "pvp"],
-    description: ""
-  },
-  {
-    nick: "Tomyyyy_",
-    roles: ["recruta", "sa", "div2", "homem", "semi", "pvp"],
-    description: ""
-  },
-  {
-    nick: "mickael7z",
-    roles: ["recruta", "sa", "div2", "homem", "semi", "pvp"],
-    description: ""
-  },
-  {
-    nick: "Vexx_xgh",
-    roles: ["recruta", "sa", "div2", "homem", "semi", "pvp"],
-    description: ""
-  },
-  {
-    nick: "M1dzz",
-    roles: ["recruta", "sa", "div3", "homem", "semi", "pvp"],
-    description: ""
-  },
-  {
-    nick: "916Killua",
-    roles: ["recruta", "sa", "div2", "homem", "semi", "pvp"],
-    description: ""
-  },
-  {
-    nick: "Luisdoxvds",
-    roles: ["recruta", "sa", "div2", "homem", "semi", "pvp"],
-    description: ""
-  },
-  {
-    nick: "Comentario",
-    roles: ["recruta", "sa", "eu", "div3", "homem", "semi", "pvp", "builder"],
-    description: ""
-  },
-  {
-    nick: "6wsd",
-    roles: ["recruta", "sa", "div2", "homem", "semi", "pvp"],
-    description: ""
-  },
-  {
-    nick: "V3nyxWz",
-    roles: ["recruta", "sa", "div2", "homem", "semi", "pvp"],
-    description: ""
-  },
-  {
-    nick: "KauaOPIS_BACK",
-    roles: ["recruta", "sa", "div2", "homem", "semi", "pvp"],
-    description: ""
-  },
-  {
-    nick: "AuakgPRO",
-    roles: ["recruta", "sa", "div2", "homem", "semi", "pvp"],
-    description: ""
-  },
-  {
-    nick: "menor_progresso7",
-    roles: ["recruta", "sa", "div2", "homem", "semi", "pvp"],
-    description: ""
-  },
-  {
-    nick: "LAGARXIXA_4M",
-    roles: ["recruta", "sa", "div2", "homem", "semi", "pvp"],
-    description: ""
-  },
-  {
-    nick: "EspadachimPreto",
-    roles: ["recruta", "sa", "div2", "homem", "semi", "pvp"],
-    description: ""
-  },
-  {
-    nick: "31003",
-    roles: ["recruta", "sa", "div2", "homem", "semi", "pvp"],
-    description: ""
-  },
-  {
-    nick: "SW1GHT7",
-    roles: ["recruta", "sa", "div2", "homem", "semi", "pvp"],
-    description: ""
-  },
-  {
-    nick: "shadowcraft00",
-    roles: ["recruta", "sa", "div2", "homem", "semi", "pvp"],
-    description: ""
-  },
-  {
-    nick: "Arth_turgita",
-    roles: ["recruta", "sa", "div2", "homem", "semi", "pvp"],
-    description: ""
-  },
-  {
-    nick: "Angelo123457892",
-    roles: ["recruta", "sa", "div2", "homem", "semi", "pvp"],
-    description: ""
-  },
-  {
-    nick: "BEZINHO2013 ",
-    roles: ["recruta", "sa", "div2", "homem", "semi", "pvp"],
-    description: ""
-  }
+  membro("SrLordM", ["dono", "subdono", "capitaes", "liderdivisao", "oficial", "veterano", "membro", "recruta", "pvp", "homem", "builder", "recrutador_tnb", "bee_swarm"], "Fundador e Organizador da TNB."),
+  membro("Divisionbz", ["subdono", "lider_div_2", "sa", "div1", "sa", "recrutador_tnb", "homem", "semi", "pvp"], "Líder dos treinamentos e testes de novos membros."),
+  membro("PyromaniacVV", ["subdono", "sa", "div1", "sa", "recrutador_tnb", "homem", "semi", "pvp"], "Líder de tickets e formulários."),
+  membro("xCarlosBR", ["capitaes", "div1", "sa", "homem", "semi", "box", "pvp"], "Líder da divisão 1."),
+  membro("Arrasto", ["liderdivisao", "lider_div_2", "div1", "sa", "homem", "semi", "pvp"], "Líder da divisão 2."),
+  membro("LCDOLOVE_", ["veterano", "div1", "sa", "homem", "semi", "pvp"], ""),
+  membro("Colph", ["veterano", "sa", "div3", "homem", "semi", "pvp"], ""),
+  membro("zemdubs", ["veterano", "sa", "div2", "homem", "semi", "pvp"], ""),
+  membro("CavIsMewing", ["veterano", "sa", "div3", "homem", "semi", "pvp"], ""),
+  membro("RogerRivers", ["veterano", "sa", "div3", "homem", "semi", "pvp"], ""),
+  membro("Kitter4k", ["veterano", "recrutador_tnb", "sa", "div2", "homem", "semi", "pvp"], ""),
+  membro("oVelocityrs", ["veterano", "recrutador_tnb", "sa", "div1", "homem", "semi", "box", "pvp"], ""),
+  membro("ghzv_", ["veterano", "sa", "div1", "homem", "semi", "pvp"], ""),
+  membro("ssobre", ["veterano", "sa", "div3", "homem", "builder", "pvp"], ""),
+  membro("didizinhogod", ["membro", "sa", "div2", "homem", "semi", "pvp"], ""),
+  membro("caputtinno", ["membro", "sa", "div3", "homem", "semi", "builder", "pvp"], ""),
+  membro("bentofv", ["membro", "sa", "div2", "homem", "semi", "pvp"], ""),
+  membro("vvako", ["membro", "sa", "div3", "homem", "semi", "pvp"], ""),
+  membro("H3gkz", ["recruta", "sa", "div1", "homem", "semi", "pvp"], ""),
+  membro("Itzpaiva", ["recruta", "eu", "div2", "homem", "semi", "pvp"], ""),
+  membro("carnetemperrado", ["recruta", "sa", "div2", "homem", "semi", "pvp"], ""),
+  membro("Akio_123hahagege", ["recruta", "sa", "div2", "homem", "semi", "pvp"], ""),
+  membro("pedrotriste", ["recruta", "sa", "div3", "homem", "semi", "pvp"], ""),
+  membro("Arth_turgita", ["recruta", "sa", "div2", "homem", "semi", "pvp"], ""),
+  membro("AbyssifexXJ", ["recruta", "sa", "div3", "homem", "semi", "pvp"], ""),
+  membro("Renann067", ["recruta", "sa", "div3", "homem", "semi", "pvp"], ""),
+  membro("SpectralBR", ["recruta", "sa", "div2", "homem", "semi", "box", "pvp"], ""),
+  membro("hqzyggez", ["recruta", "sa", "div2", "homem", "semi", "pvp"], ""),
+  membro("Wyzxzs", ["recruta", "sa", "div2", "homem", "semi", "pvp"], ""),
+  membro("Stripyduck01736", ["recruta", "sa", "div2", "homem", "semi", "pvp"], ""),
+  membro("mickael7z", ["recruta", "sa", "div2", "homem", "semi", "pvp"], ""),
+  membro("M1dzz", ["recruta", "sa", "div3", "homem", "semi", "pvp"], ""),
+  membro("916Killua", ["recruta", "sa", "div2", "homem", "semi", "pvp"], ""),
+  membro("Comentario", ["recruta", "sa", "eu", "div3", "homem", "semi", "pvp", "builder"], ""),
+  membro("V3nyxWz", ["recruta", "sa", "div2", "homem", "semi", "pvp"], ""),
+  membro("KauaOPIS_BACK", ["recruta", "sa", "div2", "homem", "semi", "pvp"], ""),
+  membro("AuakgPRO", ["recruta", "sa", "div2", "homem", "semi", "pvp"], ""),
+  membro("menor_progresso7", ["recruta", "sa", "div2", "homem", "semi", "pvp"], ""),
+  membro("LAGARXIXA_4M", ["recruta", "sa", "div2", "homem", "semi", "pvp"], ""),
+  membro("EspadachimPreto", ["recruta", "sa", "div2", "homem", "semi", "pvp"], ""),
+  membro("31003", ["recruta", "sa", "div2", "homem", "semi", "pvp"], ""),
+  membro("SW1GHT7", ["recruta", "sa", "div2", "homem", "semi", "pvp"], ""),
+  membro("shadowcraft00", ["recruta", "sa", "div2", "homem", "semi", "pvp"], ""),
+  membro("Arth_turgita", ["recruta", "sa", "div2", "homem", "semi", "pvp"], ""),
+  membro("Angelo123457892", ["recruta", "sa", "div2", "homem", "semi", "pvp"], ""),
+  membro("BEZINHO2013 ", ["recruta", "sa", "div2", "homem", "semi", "pvp"], "")
 ];

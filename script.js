@@ -63,6 +63,7 @@ const galleryImages = [
 /* Função curta para selecionar elementos HTML. */
 /* Filtro atual do roster. "todos" mostra todos os cargos. */
 let activeRoleFilter = "todos";
+let activePortalTab = "events";
 
 const select = (selector) => document.querySelector(selector);
 
@@ -338,6 +339,114 @@ function renderGallery() {
     .join("");
 }
 
+function renderPortalCards() {
+  const renderEmpty = (message) => `
+    <article class="portal-card reveal">
+      <span class="portal-card__status">Vazio</span>
+      <h3>Nada anunciado</h3>
+      <p>${escapeHTML(message)}</p>
+    </article>
+  `;
+
+  const eventsGrid = select("#eventsGrid");
+  if (eventsGrid) {
+    const events = Array.isArray(window.TNB_EVENTS) ? window.TNB_EVENTS : [];
+    eventsGrid.innerHTML = events.length
+      ? events.map((event) => `
+          <article class="portal-card reveal">
+            <span class="portal-card__status">${escapeHTML(event.status)}</span>
+            <h3>${escapeHTML(event.title)}</h3>
+            <div class="portal-card__meta">
+              <span>${escapeHTML(event.date)}</span>
+              <span>${escapeHTML(event.time)}</span>
+              <span>${escapeHTML(event.server)}</span>
+              <span>${escapeHTML(event.type)}</span>
+            </div>
+            <p>${escapeHTML(event.description)}</p>
+            <p><strong>Requisito:</strong> ${escapeHTML(event.requirements)}</p>
+          </article>
+        `).join("")
+      : renderEmpty("Nenhum evento programado no momento.");
+  }
+
+  const partnersGrid = select("#partnersGrid");
+  if (partnersGrid) {
+    const partners = Array.isArray(window.TNB_PARTNERS) ? window.TNB_PARTNERS : [];
+    partnersGrid.innerHTML = partners.length
+      ? partners.map((partner) => `
+          <article class="portal-card reveal">
+            <span class="portal-card__status">${escapeHTML(partner.status)}</span>
+            <h3>${escapeHTML(partner.name)}</h3>
+            <div class="portal-card__meta">
+              <span>${escapeHTML(partner.category)}</span>
+              <span>${escapeHTML(partner.address)}</span>
+            </div>
+            <p>${escapeHTML(partner.description)}</p>
+          </article>
+        `).join("")
+      : renderEmpty("Nenhum parceiro cadastrado no momento.");
+  }
+
+  const alliesGrid = select("#alliesGrid");
+  if (alliesGrid) {
+    const allies = Array.isArray(window.TNB_ALLIES) ? window.TNB_ALLIES : [];
+    alliesGrid.innerHTML = allies.length
+      ? allies.map((ally) => `
+          <article class="portal-card reveal">
+            <span class="portal-card__status">${escapeHTML(ally.status)}</span>
+            <h3>${escapeHTML(ally.name)}</h3>
+            <div class="portal-card__meta">
+              <span>${escapeHTML(ally.server)}</span>
+            </div>
+            <p>${escapeHTML(ally.description)}</p>
+          </article>
+        `).join("")
+      : renderEmpty("Nenhum aliado cadastrado no momento.");
+  }
+
+  const giveawaysGrid = select("#giveawaysGrid");
+  if (giveawaysGrid) {
+    const giveaways = Array.isArray(window.TNB_GIVEAWAYS) ? window.TNB_GIVEAWAYS : [];
+    giveawaysGrid.innerHTML = giveaways.length
+      ? giveaways.map((giveaway) => `
+          <article class="portal-card reveal">
+            <span class="portal-card__status">${escapeHTML(giveaway.status)}</span>
+            <h3>${escapeHTML(giveaway.title)}</h3>
+            <div class="portal-card__meta">
+              <span>${escapeHTML(giveaway.prize)}</span>
+              <span>${escapeHTML(giveaway.endsAt)}</span>
+              <span>${escapeHTML(giveaway.organizer)}</span>
+            </div>
+            <p>${escapeHTML(giveaway.description)}</p>
+          </article>
+        `).join("")
+      : renderEmpty("Nenhum sorteio cadastrado no momento.");
+  }
+}
+
+function setupPortalTabs() {
+  const tabs = selectAll("[data-portal-tab]");
+  const panels = selectAll("[data-portal-panel]");
+
+  if (!tabs.length || !panels.length) {
+    return;
+  }
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      activePortalTab = tab.dataset.portalTab;
+
+      tabs.forEach((item) => {
+        item.classList.toggle("is-active", item.dataset.portalTab === activePortalTab);
+      });
+
+      panels.forEach((panel) => {
+        panel.classList.toggle("is-active", panel.dataset.portalPanel === activePortalTab);
+      });
+    });
+  });
+}
+
 /* Menu mobile: abre e fecha ao clicar no botão. */
 function setupMobileMenu() {
   const button = select("#navToggle");
@@ -479,6 +588,8 @@ document.addEventListener("DOMContentLoaded", () => {
   renderMemberFilters();
   renderMembers();
   renderGallery();
+  renderPortalCards();
+  setupPortalTabs();
   setupMobileMenu();
   setupRevealAnimations();
   setupCurrentYear();
