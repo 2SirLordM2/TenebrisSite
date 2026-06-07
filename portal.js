@@ -45,23 +45,23 @@ window.TNB_PARTNERS = [
     description: "Servidor focado na modalidade de RankUp com diversas funcionalidades novas."
   }
 ];
-/*
+
 window.TNB_ALLIES = [
-  {
-    name: "Nenhum",
-    server: "Nenhum",
-    status: "Ativo",
-    description: "Aliança formada em 03/06/2026."
-  }
+  /*{
+    name: "nenhum aliado no momento",
+    server: "nenhum servidor no momento",
+    status: "inativo",
+    description: "nenhuma descrição no momento"
+  } */
 ];
-*/
+
 window.TNB_GIVEAWAYS = [
-  {
+  /* {
     title: "Sorteio interno TNB",
     prize: "Prêmio 1 Milhão.",
     status: "Ativo",
     endsAt: "Finaliza em 06/06/2026 11:27",
     organizer: "Organizador: SrLordM",
     description: "Sorteio reservado para membros ativos do clã."
-  }
+  } */
 ];

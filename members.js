@@ -214,21 +214,27 @@ window.TNB_MEMBERS = [
   membro("SrLordM", ["dono", "subdono", "capitaes", "liderdivisao", "oficial", "veterano", "membro", "recruta", "pvp", "homem", "builder", "recrutador_tnb", "bee_swarm"], "Fundador e Organizador da TNB."),
   membro("Divisionbz", ["subdono", "lider_div_2", "sa", "div1", "sa", "recrutador_tnb", "homem", "semi", "pvp"], "Líder dos treinamentos e testes de novos membros."),
   membro("PyromaniacVV", ["subdono", "sa", "div1", "sa", "recrutador_tnb", "homem", "semi", "pvp"], "Líder de tickets e formulários."),
+
   membro("xCarlosBR", ["capitaes", "div1", "sa", "homem", "semi", "box", "pvp"], "Líder da divisão 1."),
+
   membro("Arrasto", ["liderdivisao", "lider_div_2", "div1", "sa", "homem", "semi", "pvp"], "Líder da divisão 2."),
+
+  membro("oVelocityrs", ["oficial", "recrutador_tnb", "sa", "div1", "homem", "semi", "box", "pvp"], ""),
+
   membro("LCDOLOVE_", ["veterano", "div1", "sa", "homem", "semi", "pvp"], ""),
   membro("Colph", ["veterano", "sa", "div3", "homem", "semi", "pvp"], ""),
   membro("zemdubs", ["veterano", "sa", "div2", "homem", "semi", "pvp"], ""),
   membro("CavIsMewing", ["veterano", "sa", "div3", "homem", "semi", "pvp"], ""),
   membro("RogerRivers", ["veterano", "sa", "div3", "homem", "semi", "pvp"], ""),
   membro("Kitter4k", ["veterano", "recrutador_tnb", "sa", "div2", "homem", "semi", "pvp"], ""),
-  membro("oVelocityrs", ["veterano", "recrutador_tnb", "sa", "div1", "homem", "semi", "box", "pvp"], ""),
   membro("ghzv_", ["veterano", "sa", "div1", "homem", "semi", "pvp"], ""),
   membro("ssobre", ["veterano", "sa", "div3", "homem", "builder", "pvp"], ""),
   membro("didizinhogod", ["membro", "sa", "div2", "homem", "semi", "pvp"], ""),
   membro("caputtinno", ["membro", "sa", "div3", "homem", "semi", "builder", "pvp"], ""),
   membro("bentofv", ["membro", "sa", "div2", "homem", "semi", "pvp"], ""),
   membro("vvako", ["membro", "sa", "div3", "homem", "semi", "pvp"], ""),
+  membro("AuakgPRO", ["membro", "sa", "div2", "homem", "semi", "pvp"], ""),
+
   membro("H3gkz", ["recruta", "sa", "div1", "homem", "semi", "pvp"], ""),
   membro("Itzpaiva", ["recruta", "eu", "div2", "homem", "semi", "pvp"], ""),
   membro("carnetemperrado", ["recruta", "sa", "div2", "homem", "semi", "pvp"], ""),
@@ -247,7 +253,6 @@ window.TNB_MEMBERS = [
   membro("Comentario", ["recruta", "sa", "eu", "div3", "homem", "semi", "pvp", "builder"], ""),
   membro("V3nyxWz", ["recruta", "sa", "div2", "homem", "semi", "pvp"], ""),
   membro("KauaOPIS_BACK", ["recruta", "sa", "div2", "homem", "semi", "pvp"], ""),
-  membro("AuakgPRO", ["recruta", "sa", "div2", "homem", "semi", "pvp"], ""),
   membro("menor_progresso7", ["recruta", "sa", "div2", "homem", "semi", "pvp"], ""),
   membro("LAGARXIXA_4M", ["recruta", "sa", "div2", "homem", "semi", "pvp"], ""),
   membro("EspadachimPreto", ["recruta", "sa", "div2", "homem", "semi", "pvp"], ""),
