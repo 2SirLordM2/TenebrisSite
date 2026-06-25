@@ -38,21 +38,62 @@ window.TNB_EVENTS = [
 
 window.TNB_PARTNERS = [
   {
-    name: "Rede Ancestral",
+    name: "Tellus MC",
     category: "Servidor parceiro",
-    address: "redeancestral.blazebr.com",
+    address: "discord.gg/fsFQfVdeN",
+    status: "Em desenvolvimento",
+    description: "Servidor de geopolítica na versão 1.21, com mapa inspirado no planeta Terra, nações, alianças, rotas comerciais, guerras e diplomacia."
+  },
+  {
+    name: "Servidor de SrLordM",
+    category: "Comunidade parceira",
+    address: "discord.gg/CW8T6JsZtT",
     status: "Ativo",
-    description: "Servidor focado na modalidade de RankUp com diversas funcionalidades novas."
+    description: "Servidor criado para reunir desenvolvimento de plugins, projetos futuros, conteúdos, lives e materiais gratuitos da comunidade do SrLordM."
+  },
+  {
+    name: "CookieMC",
+    category: "Servidor parceiro",
+    address: "Java: cookie.magnohost.com | Bedrock: porta 25603 | discord.gg/MeNz3fRA9",
+    status: "Ativo",
+    description: "Servidor Java e Bedrock com modos SMP, BoxPvP e eventos para a comunidade."
+  },
+  {
+    name: "POLITICA-MC",
+    category: "Servidor parceiro",
+    address: "Java: politicamc.net.br | Bedrock: mc.politicamc.net.br porta 10303",
+    status: "Ativo",
+    description: "Servidor Java e Bedrock com modos Practice e Towny, treino PvP, civilizações, cidades, guerras, proteção de terreno e economia balanceada."
+  },
+  {
+    name: "Servidor do Pyro",
+    category: "Comunidade parceira",
+    address: "discord.gg/VSXfqEQ2yn | BawMC: bawmc.net:19132",
+    status: "Ativo",
+    description: "Comunidade do PyromaniacVV com acesso a calls, avisos antecipados de sorteios e recompensas."
+  },
+  {
+    name: "Blade Store",
+    category: "Loja e comunidade parceira",
+    address: "discord.gg/bladestore",
+    status: "Ativo",
+    description: "Comunidade focada em Roblox, Robux baratos, trades, sorteios frequentes, eventos especiais e oportunidades de ganhar itens."
   }
 ];
 
 window.TNB_ALLIES = [
-  /*{
-    name: "nenhum aliado no momento",
-    server: "nenhum servidor no momento",
-    status: "inativo",
-    description: "nenhuma descrição no momento"
-  } */
+  {
+    name: "Cruzada",
+    server: "CRUZ",
+    status: "Aliado",
+    description: "Clã aliado da Tenebris. Conflitos envolvendo membros aliados devem ser gravados e resolvidos via ticket ou liderança."
+  },
+  {
+    name: "Hollow",
+    server: "HWL",
+    status: "Aliado",
+    description: "Clã aliado da Tenebris. É proibido atacar, provocar ou prejudicar membros aliados sem clip, reembolso ou punição quando aplicável."
+  }
 ];
 
 window.TNB_GIVEAWAYS = [

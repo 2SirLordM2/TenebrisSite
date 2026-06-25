@@ -22,7 +22,7 @@ const DISCORD_INVITE = "https://discord.gg/vzAkdxCnb2";
 /* Estatísticas editáveis do clã. */
 const clanStats = {
   foundationYear: 2025,
-  victories: 200,
+  victories: "+100",
   serversDominated: 4
 };
 
@@ -78,6 +78,28 @@ function escapeHTML(value) {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
+}
+
+function getPortalStatusClass(status) {
+  const normalizedStatus = String(status)
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/\s+/g, "-");
+
+  const statusClasses = {
+    ativo: "active",
+    aberto: "open",
+    programado: "scheduled",
+    aliado: "ally",
+    "em-desenvolvimento": "development",
+    "em-breve": "soon",
+    vazio: "empty",
+    inativo: "empty",
+    historico: "history"
+  };
+
+  return `portal-card__status--${statusClasses[normalizedStatus] || "default"}`;
 }
 
 /* Atualiza todos os botões e textos que usam o convite do Discord. */
@@ -342,7 +364,7 @@ function renderGallery() {
 function renderPortalCards() {
   const renderEmpty = (message) => `
     <article class="portal-card reveal">
-      <span class="portal-card__status">Vazio</span>
+      <span class="portal-card__status portal-card__status--empty">Vazio</span>
       <h3>Nada anunciado</h3>
       <p>${escapeHTML(message)}</p>
     </article>
@@ -354,7 +376,7 @@ function renderPortalCards() {
     eventsGrid.innerHTML = events.length
       ? events.map((event) => `
           <article class="portal-card reveal">
-            <span class="portal-card__status">${escapeHTML(event.status)}</span>
+            <span class="portal-card__status ${getPortalStatusClass(event.status)}">${escapeHTML(event.status)}</span>
             <h3>${escapeHTML(event.title)}</h3>
             <div class="portal-card__meta">
               <span>${escapeHTML(event.date)}</span>
@@ -375,7 +397,7 @@ function renderPortalCards() {
     partnersGrid.innerHTML = partners.length
       ? partners.map((partner) => `
           <article class="portal-card reveal">
-            <span class="portal-card__status">${escapeHTML(partner.status)}</span>
+            <span class="portal-card__status ${getPortalStatusClass(partner.status)}">${escapeHTML(partner.status)}</span>
             <h3>${escapeHTML(partner.name)}</h3>
             <div class="portal-card__meta">
               <span>${escapeHTML(partner.category)}</span>
@@ -393,7 +415,7 @@ function renderPortalCards() {
     alliesGrid.innerHTML = allies.length
       ? allies.map((ally) => `
           <article class="portal-card reveal">
-            <span class="portal-card__status">${escapeHTML(ally.status)}</span>
+            <span class="portal-card__status ${getPortalStatusClass(ally.status)}">${escapeHTML(ally.status)}</span>
             <h3>${escapeHTML(ally.name)}</h3>
             <div class="portal-card__meta">
               <span>${escapeHTML(ally.server)}</span>
@@ -410,7 +432,7 @@ function renderPortalCards() {
     giveawaysGrid.innerHTML = giveaways.length
       ? giveaways.map((giveaway) => `
           <article class="portal-card reveal">
-            <span class="portal-card__status">${escapeHTML(giveaway.status)}</span>
+            <span class="portal-card__status ${getPortalStatusClass(giveaway.status)}">${escapeHTML(giveaway.status)}</span>
             <h3>${escapeHTML(giveaway.title)}</h3>
             <div class="portal-card__meta">
               <span>${escapeHTML(giveaway.prize)}</span>
